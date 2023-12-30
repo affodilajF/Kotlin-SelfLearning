@@ -40,7 +40,7 @@ We dont need to manually manage the threads.
 
 Misal, kita memasukkan 100 runnable object dan thread yang tersedia berjumlah 5, itu gkpp. 100 tsb masuk dlu ke execserv, nah 5 thread akan mengeksekusi antrean sampai habis. 5 thread ambil 5 runnable secara paralel, ambnil 5 lagi, dan ambil 5 lagi. 
 
-#### Contoh Penggunaan ExecService 
+### Contoh Penggunaan ExecService 
 
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/21da30e4-00bf-4dd6-af53-c36ceb302391)
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/bc1b7187-5000-4070-9df9-4b7953d6d7a2)
@@ -48,9 +48,26 @@ Misal, kita memasukkan 100 runnable object dan thread yang tersedia berjumlah 5,
 Itu kalau pakai 1 thread (newSingleThreadExecutor). Maka 1 runnable 1 thread. Kalo pake Fixed atau Cached, maka 1 task 1 thread, n thread dijalankan secara paralel. 
 
 
-###### Kelebihan ExecServ dibanding Membuat Thread secara manual adalah => 
-Problem in manual thread -> , ketika main thread selesai atau mati, ini tidak akan secara otomatis menghentikan atau menghancurkan thread-thread lain yang masih berjalan. 
-ExecServ solve -> Main thread tidak akan terhenti apabila semua proses ExecService belum selesai. 
+#### Kelebihan ExecServ dibanding Membuat Thread secara manual adalah => 
+Problem in manual thread -> Ketika main thread selesai atau mati, ini tidak akan secara otomatis menghentikan atau menghancurkan thread-thread lain yang masih berjalan. Well, basically it depends either Daemon or Non-Daemon. 
+ExecServ solve -> Executor thread keeps running after main class is finished. 
+Yep, it's designed to do that. The whole point of an ExecutorService is that there is a pool of threads. Even though the Runnable that you submitted has finished, the threads in the pool are waiting for other jobs to come along. You need to shutdown the pool to get your application to terminate. (By write execService.shutDown()). Once you shutdown the pool and the jobs that have submitted finish, the threads in the pool will terminate and, if there are no more non-daemon threads, your application will stop.
+
+Liat kode diatas, gapake execService.shutDown(), JVM akan on terus. Process finished with exit code 0 ga terjadi-jadi. 
+
+#### We need to consider how much acceptable threads are based on : 
+Berapa time yang mau di achieve pada sebuah proses dan berapa resource hardwarenya. 
+
+Makin banyak thread == makin butuh banyak memory. 
+
+### PZN not recommending to use cachedThreadPool.
+Dia infinity, bahaya. Bikin 100 runnable maka thread bisa aja dibikin 100. Intinya bikin thread sampe memori kita habis. 
+
+# MATERI FUTURE -----------------------
+
+
+
+
 
 
 
