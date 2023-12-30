@@ -19,6 +19,15 @@ We dont need to manually manage the threads.
 
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/25388e5e-1d78-4a5c-8052-84b02a5143d6)
 
+Misal, kita memasukkan 100 runnable object dan thread yang tersedia berjumlah 5, itu gkpp. 100 tsb masuk dlu ke execserv, nah 5 thread akan mengeksekusi antrean sampai habis. 5 thread ambil 5 runnable secara paralel, ambnil 5 lagi, dan ambil 5 lagi. 
+
+![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/6dabd70a-212c-4d50-8785-9205976aac47)
+![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/5971dfc2-ae96-4f69-bf5f-46605cca960f)
+
+Itu kalau pakai 1 thread (newSingleThreadExecutor). Kalau pake fixed thread atau cahedThread, maka spt yang 5 ambil 5 tadi. 
+
+
+
 
 
 
