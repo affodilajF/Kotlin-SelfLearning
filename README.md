@@ -83,13 +83,14 @@ Kita minta sesuatu ke execService, lalu sesuatu tsb bertipe data objek future. O
 
 ### Contoh peng-aplikasian future
 Punya kelas bernama Future 
+
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/34abc890-7fa1-45d6-9a14-48d5a2f1b4bb)
 
--- Contoh apabila SATU THREAD
+* Contoh apabila SATU THREAD
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/9ed59180-be4e-4edb-9566-71b28308caf6)
 
 
--- Contoh apabila PARALEL THREAD (menggunakan future dg callable yaah) 
+* Contoh apabila PARALEL THREAD (menggunakan future dg callable yaah) 
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/ade56d90-aa35-4e80-b4b7-3d1d456fff5e)
 
 ### Method-method di future 
@@ -98,6 +99,8 @@ Punya kelas bernama Future
 3. isDone => Check udah slelsai apa belom, pasti ada datanya
 4. get() dipanggil ketika datanya ada, dia harus nunggu
 5. get(long timeout) => timeout adalah waktu max untuk menunggu data, kalo tdk tercapai maka throw exception
+
+
 
 # (2) MATERI KOTLIN COROUTINES -------------------------------
 
