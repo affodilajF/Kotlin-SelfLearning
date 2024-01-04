@@ -2,6 +2,7 @@
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.*
 
 // NOTE 1 ---------------
 // Even kamu pakai GlobalSocpe.launch 2x, buka berarti bcg thread untuk corutine dibuat berjumlah 2
@@ -14,19 +15,19 @@ import kotlinx.coroutines.launch
 // Delay => Coroutine is suspended but Thread : T1 is free (not blocked)
 
 fun main(){
-    println("Running in main thread starts : ${Thread.currentThread().name}")
+    println("Running in main thread starts : ${Thread.currentThread().name}, ${Date()}")
 
     GlobalScope.launch {
         println("Running in coroutine bcg thread starts : ${Thread.currentThread().name}")
 
-        Thread.sleep(2000)
+//        Thread.sleep(2000)
         delay(2000)
 
         println("Running in coroutine bcg thread ended : ${Thread.currentThread().name}")
     }
 
     Thread.sleep(9000)
-    println("Running in main thread ended : ${Thread.currentThread().name}")
+    println("Running in main thread ended : ${Thread.currentThread().name}, ${Date()}")
 }
 
 
