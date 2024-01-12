@@ -9,7 +9,6 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-//    jcenter()
 }
 
 dependencies {
@@ -23,17 +22,6 @@ kotlin {
     jvmToolchain(17)
 }
 
-
-
-application {
-    mainClass= "org.example.belajar.AppKt"
+application{
+    mainClass.set("MainKt")
 }
-
-tasks.register("author"){
-
-}
-
-
-
-
-
