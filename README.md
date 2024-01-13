@@ -1,4 +1,4 @@
-# MOCKING ( BERHUBUNGAN DG UNIT TEST TAPI BUKAN BAGIAN DR JUNIT )
+
 
 # Introduction Mocking --------------------------------------------
 - Makin besar app, kemungkinan ketergantungan antar class makin gede pula.
