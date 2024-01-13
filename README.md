@@ -209,6 +209,7 @@ Agar suatu fungsi ut bisa memiliki parameter. Implements ParameterResolver.
    ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/c160bc01-e32d-4eef-9b19-e7b6c8822f8e)
 
 3. Logicnya => objek parameter random : Random akan diambil dari kelas RandomParameterresolver, di dalam kelastersebut ada proses inisasi objek Random(), nah pake ini. Kalo gapake resolver harus bikin objek Random() disetiap testcase kaya gini.
+   
 ![image](https://github.com/affodilajF/Kotlin-SelfLearning/assets/130672181/4c8965cc-d7ed-4f87-84a0-823ad4d08be6)
 
 
